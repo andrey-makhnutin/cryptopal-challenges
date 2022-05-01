@@ -33,10 +33,3 @@ fn print_hex_bytes(bytes: &[u8]) {
     }
     println!()
 }
-
-fn try_print_utf8(bytes: &[u8]) {
-    let res = std::str::from_utf8(bytes);
-    if let Ok(str) = res {
-        println!("Can be decoded as utf8: {}", str);
-    }
-}
