@@ -1,0 +1,4 @@
+Enter XOR-enctypted data in hex
+1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736
+Best key found was 58 with score 0.04322661597637989,
+decoded string: "Cooking MC's like a pound of bacon"

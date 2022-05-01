@@ -1,6 +1,8 @@
 use std::io;
 use unicode_segmentation::UnicodeSegmentation;
 
+pub mod lang_stats;
+
 pub fn read_hex_bytes_from_stdin() -> Result<Vec<u8>, String> {
     let mut buf = String::new();
     io::stdin().read_line(&mut buf).expect("Failed to read from stdin");
