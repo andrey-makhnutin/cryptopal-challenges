@@ -1,0 +1,7 @@
+Enter data hex bytes
+1c0111001f010100061a024b53535009181c
+Enter key hex bytes
+686974207468652062756c6c277320657965
+Can be decoded as utf8: hit the bull's eye
+746865206b696420646f6e277420706c6179
+Can be decoded as utf8: the kid don't play
