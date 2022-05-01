@@ -106,6 +106,6 @@ fn calc_sextet(sextet: u8) -> char {
 pub fn try_print_utf8(bytes: &[u8]) {
     let res = std::str::from_utf8(bytes);
     if let Ok(str) = res {
-        println!("Can be decoded as utf8: {}", str);
+        println!("  - can also be decoded as utf8: \"{}\"", str);
     }
 }

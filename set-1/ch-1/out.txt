@@ -1,3 +1,5 @@
+Enter hex bytes
 49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d
-Can be decoded as utf8: I'm killing your brain like a poisonous mushroom
+  - can also be decoded as utf8: "I'm killing your brain like a poisonous mushroom"
+Base64 repsenantation of bytes is
 SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t
