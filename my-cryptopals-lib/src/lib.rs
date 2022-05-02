@@ -11,19 +11,55 @@ pub fn read_hex_bytes_from_stdin() -> Result<Vec<u8>, String> {
     if buf.ends_with('\n') {
         buf.truncate(buf.len() - 1);
     }
+    parse_hex_string(&buf)
+}
 
-    let mut out = Vec::with_capacity(buf.len() / 2);
+pub fn read_long_hex_bytes_from_stdin() -> Result<Vec<u8>, String> {
+    let mut buf = String::new();
+    println!("Enter hex strings followed by empty line");
+    loop {
+        let mut part_buf = String::new();
+        io::stdin().read_line(&mut part_buf).expect("Failed to read from stdin");
+        if part_buf.ends_with('\n') {
+            part_buf.truncate(part_buf.len() - 1);
+        }
+        let part_buf = part_buf.trim();
+        if part_buf.len() == 0 {
+            break;
+        }
+        buf.push_str(part_buf);
+    }
+    parse_hex_string(&buf)
+}
+
+pub fn read_long_string_from_stdin() -> Vec<u8> {
+    let mut buf = String::new();
+    println!("Enter hex strings followed by empty line");
+    loop {
+        let mut part_buf = String::new();
+        io::stdin().read_line(&mut part_buf).expect("Failed to read from stdin");
+        let trimmed_part_buf = part_buf.trim();
+        if trimmed_part_buf.len() == 0 {
+            break;
+        }
+        buf.push_str(&part_buf);
+    };
+    Vec::from(buf.as_bytes())
+}
+
+pub fn parse_hex_string(text: &str) -> Result<Vec<u8>, String> {
+    let mut out = Vec::with_capacity(text.len() / 2);
     // most significant nibble
     let mut msn = true;
     let mut next_num = 0u8;
-    for (i, c) in buf.char_indices() {
+    for (i, c) in text.char_indices() {
         let nibble = c.to_digit(16);
         if nibble == None {
-            let rest_of_str = &buf[i..];
+            let rest_of_str = &text[i..];
             let mut graphemes = rest_of_str.graphemes(true);
             let mut next_grapheme = graphemes.next().unwrap();
             if i > 0 {
-                let prev_graphemes = &buf[i - 1..];
+                let prev_graphemes = &text[i - 1..];
                 let mut prev_graphemes = prev_graphemes.graphemes(true);
                 let prev_grapheme = prev_graphemes.next().unwrap();
                 if prev_grapheme.len() > next_grapheme.len() {

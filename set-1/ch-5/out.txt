@@ -1,0 +1,10 @@
+$ cargo run
+   Compiling ch-5 v0.1.0 (/home/amx/proj/cryptopals/set-1/ch-5)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.38s
+     Running `target/debug/ch-5`
+Enter hex strings followed by empty line
+Burning 'em, if you ain't quick and nimble
+I go crazy when I hear a cymbal
+
+Enter key string: ICE
+0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a26226324272765272a282b2f20430a652e2c652a3124333a653e2b2027630c692b20283165286326302e27282f4f

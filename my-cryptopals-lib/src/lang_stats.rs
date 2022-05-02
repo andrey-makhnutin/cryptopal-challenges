@@ -2,7 +2,12 @@ use crate::syllables::split_into_syllables;
 use crate::eng_syllables::{SYLLABLES, DIVISOR};
 
 pub fn compute_english_score(text: &str) -> f64 {
-    compute_english_syllables_score(text) / compute_english_letters_score(text)
+    let mut letter_score = compute_english_letters_score(text) * 50f64;
+    if letter_score < 1f64 {
+        letter_score = 1f64;
+    }
+    letter_score /= 50f64;
+    compute_english_syllables_score(text) / letter_score
 }
 
 fn compute_english_syllables_score(text: &str) -> f64 {
