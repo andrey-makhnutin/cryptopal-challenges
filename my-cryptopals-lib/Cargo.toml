@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 unicode-segmentation = "1.9.0"
+phf = { version = "0.10", features = ["macros"] }

@@ -2,6 +2,8 @@ use std::io;
 use unicode_segmentation::UnicodeSegmentation;
 
 pub mod lang_stats;
+pub mod syllables;
+mod eng_syllables;
 
 pub fn read_hex_bytes_from_stdin() -> Result<Vec<u8>, String> {
     let mut buf = String::new();
@@ -104,6 +106,18 @@ fn calc_sextet(sextet: u8) -> char {
         _ => panic!("Invalid base64 sextet {}", sextet)
     }
 }
+
+pub fn print_hex_bytes(bytes: &[u8]) {
+    for b in bytes {
+        print!(
+            "{}{}",
+            char::from_digit((b >> 4) as u32, 16).unwrap(),
+            char::from_digit((b & 0b1111) as u32, 16).unwrap()
+        );
+    }
+    println!()
+}
+
 
 pub fn try_print_utf8(bytes: &[u8]) {
     let res = std::str::from_utf8(bytes);
