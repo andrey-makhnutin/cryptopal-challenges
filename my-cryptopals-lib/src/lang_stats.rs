@@ -23,8 +23,10 @@ pub fn compute_english_score(text: &str) -> f64 {
     let mut buf: [u16; 2] = [0u16; 2];
     let mut char_count = 0;
     for c in text.chars() {
-        c.encode_utf16(&mut buf);
-        if buf[1] == 0 && buf[0] <= 0x60 && buf[0] >= 0x20 {
+        let uc_str = c.to_uppercase().to_string();
+        let uc_chars: Vec<char> = uc_str.chars().collect();
+        uc_chars[0].encode_utf16(&mut buf);
+        if uc_chars.len() == 1 && buf[1] == 0 && buf[0] <= 0x60 && buf[0] >= 0x20 {
             stat[(buf[0] - 0x20) as usize] += 1f32;
         }
         char_count += 1;
