@@ -10,7 +10,7 @@ fn main() -> Result<(), String> {
     let res = lib::try_decode_single_xor(&data);
     if let Some(res) = res {
         println!(
-            "Best key found was {:x} with score {},\ndecoded string: \"{}\"",
+            "Best key found was 0x{:x} with score {},\ndecoded string: \"{}\"",
             res.key,
             res.score,
             res.text

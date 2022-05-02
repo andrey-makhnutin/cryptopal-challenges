@@ -17,7 +17,8 @@ pub fn try_decode_single_xor(data: &[u8]) -> Option<DecodeResult> {
         }
         let text = text.unwrap();
         let score = compute_english_score(&text);
-        if best_score == None || best_score.unwrap() > score {
+        //println!("{:x}\t{}\t{:?}", k, score, text);
+        if best_score == None || best_score.unwrap() < score {
             best_score = Some(score);
             best_key = Some(k);
             best_string = Some(text);
