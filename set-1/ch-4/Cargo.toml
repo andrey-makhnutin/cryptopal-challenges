@@ -1,0 +1,10 @@
+[package]
+name = "ch-4"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+single_xor_decoder_s1_ch3 = { path = "../ch-3", package = "ch-3" }
+my-cryptopals-lib = { path = "../../my-cryptopals-lib" }
