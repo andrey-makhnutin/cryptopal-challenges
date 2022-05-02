@@ -1,3 +1,6 @@
+$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/ch-1`
 Enter hex bytes
 49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d
   - can also be decoded as utf8: "I'm killing your brain like a poisonous mushroom"

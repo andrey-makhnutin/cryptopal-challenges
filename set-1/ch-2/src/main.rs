@@ -1,6 +1,7 @@
 use my_cryptopals_lib::{
     read_hex_bytes_from_stdin,
     try_print_utf8,
+    print_hex_bytes,
 };
 
 fn main() -> Result<(), String> {
@@ -25,15 +26,4 @@ fn xor_bytes(data_bytes: &[u8], key_bytes: &[u8]) -> Result<Vec<u8>, String> {
         res.push(d ^ k);
     }
     Ok(res)
-}
-
-fn print_hex_bytes(bytes: &[u8]) {
-    for b in bytes {
-        print!(
-            "{}{}",
-            char::from_digit((b >> 4) as u32, 16).unwrap(),
-            char::from_digit((b & 0b1111) as u32, 16).unwrap()
-        );
-    }
-    println!()
 }
