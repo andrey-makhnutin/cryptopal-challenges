@@ -1,6 +1,5 @@
 $ cargo run
-   Compiling ch-5 v0.1.0 (/home/amx/proj/cryptopals/set-1/ch-5)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.38s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
      Running `target/debug/ch-5`
 Enter hex strings followed by empty line
 Burning 'em, if you ain't quick and nimble

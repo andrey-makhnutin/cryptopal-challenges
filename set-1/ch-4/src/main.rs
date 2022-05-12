@@ -1,8 +1,8 @@
 use my_cryptopals_lib::{
     read_hex_bytes_from_stdin,
     print_hex_bytes,
+    single_xor,
 };
-use single_xor_decoder_s1_ch3::try_decode_single_xor;
 
 fn main() -> Result<(), String> {
     loop {
@@ -10,12 +10,14 @@ fn main() -> Result<(), String> {
         if data.len() == 0 {
             break;
         }
-        let res = try_decode_single_xor(&data);
+        let res = single_xor::try_decode(&data, single_xor::ScoringType::EnglishSyllables);
         if let Some(res) = res {
-            if res.score > 0.15 {
+            if res.score > 0.1 {
+                let decoded = single_xor::decode(&data, res.key);
+                let text = std::str::from_utf8(&decoded).unwrap();
                 print!("Decoded string: ");
                 print_hex_bytes(&data);
-                println!("'{:?}', score {}", res.text, res.score);
+                println!("'{:?}', score {}", text, res.score);
             }
         }
     }

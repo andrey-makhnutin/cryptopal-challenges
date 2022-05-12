@@ -4,8 +4,9 @@ pub fn split_into_syllables(text: &str) -> Vec<String> {
     let mut end_of_syllable = false;
     let mut new_syllable = String::new();
     let mut tail = 0;
+    let mut consonants_in_a_row = 0;
     for (i, c) in text.char_indices() {
-        if !c.is_alphabetic() {
+        if is_word_boundary(c) {
             if new_syllable.len() > 0 {
                 out.push(new_syllable);
                 new_syllable = String::new();
@@ -21,11 +22,17 @@ pub fn split_into_syllables(text: &str) -> Vec<String> {
                 end_of_syllable = true;
             }
         } else if is_vowel(c) {
+            consonants_in_a_row = 0;
             let rest_of_text = &text[i + 1..];
             if next_is_single_consonant(rest_of_text) {
                 end_of_syllable = true;
             } else if next_is_consonant_and_vowels(rest_of_text) {
                 tail = 1;
+            }
+        } else {
+            consonants_in_a_row += 1;
+            if consonants_in_a_row > 5 {
+                end_of_syllable = true;
             }
         }
         if end_of_syllable {
@@ -34,8 +41,24 @@ pub fn split_into_syllables(text: &str) -> Vec<String> {
             end_of_syllable = false;
         }
     }
+    if new_syllable.len() > 0 {
+        out.push(new_syllable);
+    }
 
     out
+}
+
+fn is_word_boundary(c: char) -> bool {
+    if c.is_whitespace() {
+        return true;
+    }
+    match c {
+        ','|'.'|':'|';'|'|'|'/'|'\\'|'\''|'"'|'`'|'~'|'@'
+            |'!'|'#'|'$'|'%'|'^'|'&'|'*'|'('|')'|'-'|'_'|'+'
+            |'['|']'|'{'|'}'|'<'|'>'|'?'|'—'|'’'|'…'|'“'|'‘'|'”' => true,
+        '0'..='9' => true,
+        _ => false,
+    }
 }
 
 fn is_vowel(c: char) -> bool {

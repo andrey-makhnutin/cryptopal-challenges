@@ -24,7 +24,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let syllables = split_into_syllables(&text);
     let syl_stats = calc_stats(&syllables);
-    print_stats(&syl_stats, syllables.len(), &filename);
+    print_stats(&syl_stats, &filename);
 
     Ok(())
 }
@@ -41,7 +41,7 @@ fn calc_stats(syllables: &Vec<String>) -> HashMap<String, u32> {
     out
 }
 
-fn print_stats(syllables: &HashMap<String, u32>, syl_count: usize, filename: &Option<String>) {
+fn print_stats(syllables: &HashMap<String, u32>, filename: &Option<String>) {
     let mut keys: Vec<&String> = syllables.keys().collect();
     keys.sort();
     keys.sort_by_key(|&k| -1 * (*syllables.get(k).unwrap() as i32));
@@ -64,5 +64,4 @@ fn print_stats(syllables: &HashMap<String, u32>, syl_count: usize, filename: &Op
         println!("   {}", data_buffer);
     }
     println!("}};");
-    println!("pub static DIVISOR: u32 = {};", syl_count);
 }
