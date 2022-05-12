@@ -123,7 +123,7 @@ pub fn read_long_hex_bytes_from_stdin() -> Result<Vec<u8>, String> {
 
 pub fn read_long_string_from_stdin() -> Vec<u8> {
     let mut buf = String::new();
-    println!("Enter hex strings followed by empty line");
+    println!("Enter strings followed by empty line");
     loop {
         let mut part_buf = String::new();
         io::stdin().read_line(&mut part_buf).expect("Failed to read from stdin");

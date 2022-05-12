@@ -130,16 +130,16 @@ fn try_key_size(data: &[u8], ks: usize) -> Option<Vec<Vec<u8>>> {
             return None
         }
     }
-    let mut var_count = 1;
-    for score in rest_scores {
-        let alphabet = &mut out[score.0];
-        var_count = var_count / alphabet.len();
-        alphabet.push(score.1);
-        var_count *= alphabet.len();
-        if var_count > 1_000 {
-            break;
-        }
-    }
+    // let mut var_count = 1;
+    // for score in rest_scores {
+    //     let alphabet = &mut out[score.0];
+    //     var_count = var_count / alphabet.len();
+    //     alphabet.push(score.1);
+    //     var_count *= alphabet.len();
+    //     if var_count > 10_000 {
+    //         break;
+    //     }
+    // }
 
     Some(out)
 }
