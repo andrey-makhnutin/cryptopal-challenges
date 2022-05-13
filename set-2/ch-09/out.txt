@@ -1,0 +1,8 @@
+$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/ch-09`
+Enter bytes followed by empty line. Optional prefixes: 'str', 'esc', 'b64', 'hex'
+YELLOW SUBMARINE
+
+Enter block length: 20
+  - can also be decoded as utf8: "YELLOW SUBMARINE\u{4}\u{4}\u{4}\u{4}"
