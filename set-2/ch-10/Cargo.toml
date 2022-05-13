@@ -1,12 +1,9 @@
 [package]
-name = "my-cryptopals-lib"
+name = "ch-10"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-unicode-segmentation = "1.9.0"
-openssl-sys = "0.9"
-openssl = "0.10"
-phf = { version = "0.10", features = ["macros"] }
+my-cryptopals-lib = { path = "../../my-cryptopals-lib" }

@@ -7,6 +7,7 @@ mod eng_syllables;
 pub mod base64;
 pub mod single_xor;
 pub mod xor;
+pub mod aes;
 
 pub fn read_long_bytes_from_stdin() -> Result<Vec<u8>, String> {
     let mut buf = String::new();
