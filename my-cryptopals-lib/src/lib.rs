@@ -8,6 +8,7 @@ pub mod base64;
 pub mod single_xor;
 pub mod xor;
 pub mod aes;
+pub mod block_cipher;
 
 pub fn read_long_bytes_from_stdin() -> Result<Vec<u8>, String> {
     let mut buf = String::new();
@@ -244,10 +245,58 @@ pub fn print_hex_bytes(bytes: &[u8]) {
     println!()
 }
 
+pub fn bytes_to_hex(bytes: &[u8]) -> String {
+    let mut out = String::with_capacity(bytes.len() * 2);
+    for b in bytes {
+        out.push(char::from_digit((b >> 4) as u32, 16).unwrap());
+        out.push(char::from_digit((b & 0b1111) as u32, 16).unwrap());
+    }
+
+    out
+}
 
 pub fn try_print_utf8(bytes: &[u8]) {
     let res = std::str::from_utf8(bytes);
     if let Ok(str) = res {
         println!("  - can also be decoded as utf8: {:?}", str);
+    }
+}
+
+fn escape_string_with_newlines(s: &str) -> String {
+    let debug_str = s.to_string();
+    let mut out = String::with_capacity(debug_str.len() + 6);
+    out.push_str("esc\"\n");
+    let mut found_escape = false;
+    for c in s.escape_debug() {
+        if found_escape {
+            found_escape = false;
+            if c == 'n' {
+                out.push('\n');
+                continue;
+            } else if c == '\'' {
+                out.push('\'');
+                continue;
+            } else if c == '"' {
+                out.push('"');
+                continue;
+            } else {
+                out.push('\\');
+            }
+        } else {
+            if c == '\\' {
+                found_escape = true;
+                continue;
+            }
+        }
+        out.push(c);
+    }
+    out.push('"');
+    out
+}
+
+pub fn bytes_to_str_or_hex(bytes: &[u8]) -> String {
+    match std::str::from_utf8(bytes) {
+        Ok(utf8_str) => escape_string_with_newlines(utf8_str),
+        Err(_) => format!("hex{}", bytes_to_hex(bytes)),
     }
 }
