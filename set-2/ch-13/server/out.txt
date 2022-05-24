@@ -1,0 +1,52 @@
+$ cargo run
+   Compiling ch-13-server v0.1.0 (/home/amx/proj/cryptopals/set-2/ch-13/server)
+    Finished dev [unoptimized + debuginfo] target(s) in 10.00s
+     Running `target/debug/ch-13-server`
+Received a form {"email": "test@example.com"}
+Received a form {"email": "testA@example.com"}
+Received a form {"email": "testAA@example.com"}
+Received a form {"email": "testAAA@example.com"}
+Received a form {"email": "testAAAA@example.com"}
+Received a form {"email": "testAAAAA@example.com"}
+Received a form {"email": "testAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@example.com"}
+Received a form {"email": "testBBBBBBAAAAAAAAAAAAAAAACCCCC@example.admin"}
+Received a form {"email": "test@example.com"}
+Received a form {"email": "testA@example.com"}
+Received a form {"email": "testAA@example.com"}
+Received a form {"email": "testAAA@example.com"}
+Received a form {"email": "testAAAA@example.com"}
+Received a form {"email": "testAAAAA@example.com"}
+Received a form {"email": "testAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAAAAAAA@example.com"}
+Received a form {"email": "testAAAAAA@example.com"}
+Received a form {"email": "testBBBBBBAAAAAAAAAAAAAAAACCCCCCC@andrey.mx"}
+Received cookie "6bd031b88858d59b9ff7cf340d71c24c24475deac4ade2208a6e992480ce9ef47ffd292d6ca6b9122a9cfc241dd598f86c52a45e360701e909b23b77e93f37feac7f051ee420354a82e01e75ddc5ec08c075bf36e3f88cf986d123b9cd9b9545"
+Decrypted cookie as esc"
+email=testBBBBBBAAAAAAAAAAAAAAAACCCCCCC%40andrey.mx&uid=45&role=admin&uid=34&rol"

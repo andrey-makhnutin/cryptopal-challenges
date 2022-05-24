@@ -1,0 +1,13 @@
+[package]
+name = "ch-13-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+warp = "0.3"
+rand = "0.8"
+my-cryptopals-lib = { path = "../../../my-cryptopals-lib" }
+form_urlencoded = "1"

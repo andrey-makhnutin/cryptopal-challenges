@@ -1,0 +1,9 @@
+$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target/debug/ch-13-client`
+Guessed block size as 16
+Repeating block index is 1
+Encrypted user role is 0e40399a40f17547cbf5c63a4337199a
+Try this account: 6bd031b88858d59b9ff7cf340d71c24c24475deac4ade2208a6e992480ce9ef47ffd292d6ca6b9122a9cfc241dd598f86c52a45e360701e909b23b77e93f37feac7f051ee420354a82e01e75ddc5ec08c075bf36e3f88cf986d123b9cd9b9545
+Checking role...
+Hello testBBBBBBAAAAAAAAAAAAAAAACCCCCCC@andrey.mx, your role is admin
